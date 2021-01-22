@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `LogUserActivityForBackpack` will be documented in this file.
+All notable changes to `Log User Activity For Backpack` will be documented in this file.
 
 ## Version 1.0
 

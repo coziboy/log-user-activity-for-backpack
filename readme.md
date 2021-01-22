@@ -5,7 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-A simple interface for [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog/).
+A simple interface for [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog/) for [Laravel Backpack](https://github.com/Laravel-Backpack/CRUD).
 
 ## Installation
 

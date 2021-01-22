@@ -9,13 +9,27 @@ A simple interface for [spatie/laravel-activitylog](https://github.com/spatie/la
 
 ## Installation
 
-Via Composer
+1) In your terminal
 
-``` bash
+```bash
+# install the package with composer
 $ composer require coziboy/log-user-activity-for-backpack
+
+# [optional] Add a sidebar_content item for it
+php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('log-user') }}'><i class='nav-icon la la-history'></i> Log User Activity</a></li>"
 ```
 
-## Usage
+2) Finish all installation steps for [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog#installation), which as been pulled as a dependency. Run its migrations.. Most likely it's:
+```bash
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="migrations"
+php artisan migrate
+// To make this work all you need to do is let your model use the Spatie\Activitylog\Traits\LogsActivity-trait
+```
+
+3) Change guard configuration values in ```config/backpack/base.php```
+``` bash
+'guard' => null,
+```
 
 ## Change log
 

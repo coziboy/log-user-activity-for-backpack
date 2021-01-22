@@ -19,7 +19,7 @@ $ composer require coziboy/log-user-activity-for-backpack
 php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('log-user') }}'><i class='nav-icon la la-history'></i> Log User Activity</a></li>"
 ```
 
-2) Finish all installation steps for [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog#installation), which as been pulled as a dependency. Run its migrations. Most likely it's:
+2) Finish all installation steps for [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog#installation), which has been pulled as a dependency. Run its migrations. Most likely it's:
 ```bash
 php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="migrations"
 php artisan migrate

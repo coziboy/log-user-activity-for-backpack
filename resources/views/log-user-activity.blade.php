@@ -49,7 +49,7 @@ trans('backpack::crud.admin') => backpack_url('dashboard'),
         <div class="table-responsive">
             <table class="table table-hover table-condensed pb-0 mb-0 table-nowrap">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th>ID</th>
                         <th>Date</th>
                         <th>Log Type</th>
@@ -61,20 +61,38 @@ trans('backpack::crud.admin') => backpack_url('dashboard'),
                 <tbody>
                     @foreach ($activities as $activity)
                     <tr>
-                        <th scope="row">{{ $activity->id }}</th>
-                        <td>
+                        <td scope="row" class="text-center">{{ $activity->id }}</td>
+                        <td class="text-center">
                             @php
                             $created = Carbon\Carbon::parse($activity->created_at);
                             @endphp
                             {{ $created->format("Y-m-d H:i:s") }} ({{ $created->diffForHumans() }})
                         </td>
-                        <td>{{ $activity->description }}</td>
-                        <td>{{ $activity->subject->getTable() }}</td>
+                        <td class="text-center">
+                            @switch($activity->description)
+                            @case("created")
+                            <span class="badge badge-success">{{ $activity->description }}</span>
+                            @break
+
+                            @case("updated")
+                            <span class="badge badge-warning text-white">{{ $activity->description }}</span>
+                            @break
+
+                            @case("deleted")
+                            <span class="badge badge-danger text-white">{{ $activity->description }}</span>
+                            @break
+
+                            @default
+                            <span class="badge badge-info">{{ $activity->description }}</span>
+                            @break
+                            @endswitch
+                        </td>
+                        <td class="text-center">{{ $activity->subject->getTable() }}</td>
                         <td>
                             {!! !empty($activity->causer) ? $activity->causer->name . "<br>(" . $activity->causer->email
                             . ")" : "-" !!}
                         </td>
-                        <td>
+                        <td class="text-center">
                             <button type="button" class="btn btn-primary btn-sm btn-show" data-id="{{ $activity->id }}">
                                 Show Detail
                             </button>
@@ -83,6 +101,7 @@ trans('backpack::crud.admin') => backpack_url('dashboard'),
                     @endforeach
                 </tbody>
             </table>
+            {{ $activities->links() }}
         </div>
     </div>
 </div>

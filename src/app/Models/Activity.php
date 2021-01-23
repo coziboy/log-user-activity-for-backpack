@@ -13,7 +13,8 @@ class Activity extends ModelsActivity
     public function getDate()
     {
         $created = Carbon::parse($this->created_at);
-        return $created->format("Y-m-d H:i:s") . " (" . $created->diffForHumans() . ")";
+
+        return $created->format('Y-m-d H:i:s').' ('.$created->diffForHumans().')';
     }
 
     public function getLogTypeClass()
@@ -21,21 +22,22 @@ class Activity extends ModelsActivity
         $log_type = $this->description;
         switch ($log_type) {
             case 'created':
-                $class = "badge badge-success";
+                $class = 'badge badge-success';
                 break;
 
             case 'updated':
-                $class = "badge badge-warning text-white";
+                $class = 'badge badge-warning text-white';
                 break;
 
             case 'deleted':
-                $class = "badge badge-danger text-white";
+                $class = 'badge badge-danger text-white';
                 break;
 
             default:
-                $class = "badge badge-info";
+                $class = 'badge badge-info';
                 break;
         }
+
         return $class;
     }
 
@@ -48,6 +50,7 @@ class Activity extends ModelsActivity
     {
         $name = $this->causer->name;
         $email = $this->causer->email;
-        return $name . "($email)";
+
+        return $name."($email)";
     }
 }

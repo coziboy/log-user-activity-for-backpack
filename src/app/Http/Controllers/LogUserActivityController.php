@@ -41,9 +41,9 @@ class LogUserActivityController extends Controller
 
             $data = collect([
                 'log_type' => $description,
-                'created_at' => $created->format('Y-m-d H:i:s') . '(' . $created->diffForHumans() . ')',
+                'created_at' => $created->format('Y-m-d H:i:s').'('.$created->diffForHumans().')',
                 'model' => $activity->subject->getTable(),
-                'causer' => !empty($activity->causer) ? $activity->causer->name . ' (' . $activity->causer->email . ')' : '-',
+                'causer' => ! empty($activity->causer) ? $activity->causer->name.' ('.$activity->causer->email.')' : '-',
                 'changes' => $activity->changes,
             ]);
 

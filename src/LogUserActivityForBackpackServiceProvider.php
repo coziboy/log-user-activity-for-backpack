@@ -14,8 +14,8 @@ class LogUserActivityForBackpackServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'log-user');
-        $this->loadRoutesFrom(__DIR__ . '/routes/backpack/loguseractivity.php');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'log-user');
+        $this->loadRoutesFrom(__DIR__.'/routes/backpack/loguseractivity.php');
         Paginator::defaultView('log-user::vendor.pagination.bootstrap-4');
         Paginator::defaultSimpleView('log-user::vendor.pagination.bootstrap-4');
     }

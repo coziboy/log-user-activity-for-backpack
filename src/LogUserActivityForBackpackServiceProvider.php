@@ -18,6 +18,10 @@ class LogUserActivityForBackpackServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/routes/backpack/loguseractivity.php');
         Paginator::defaultView('log-user::vendor.pagination.bootstrap-4');
         Paginator::defaultSimpleView('log-user::vendor.pagination.bootstrap-4');
+
+        if ($this->app->runningInConsole()) {
+            $this->bootForConsole();
+        }
     }
 
     /**
@@ -46,5 +50,9 @@ class LogUserActivityForBackpackServiceProvider extends ServiceProvider
      */
     protected function bootForConsole(): void
     {
+        // Publishing the views.
+        $this->publishes([
+            __DIR__ . '/../resources/views/vendor/backpack' => base_path('resources/views/vendor/backpack'),
+        ], 'views');
     }
 }

@@ -60,12 +60,12 @@ MIT. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/coziboy/log-user-activity-for-backpack.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/coziboy/log-user-activity-for-backpack.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/coziboy/log-user-activity-for-backpack/master.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/com/coziboy/log-user-activity-for-backpack/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/332005229/shield
 
 [link-packagist]: https://packagist.org/packages/coziboy/log-user-activity-for-backpack
 [link-downloads]: https://packagist.org/packages/coziboy/log-user-activity-for-backpack
-[link-travis]: https://travis-ci.org/coziboy/log-user-activity-for-backpack
+[link-travis]: https://travis-ci.com/coziboy/log-user-activity-for-backpack
 [link-styleci]: https://styleci.io/repos/332005229
 [link-author]: https://github.com/coziboy
 [link-contributors]: ../../contributors

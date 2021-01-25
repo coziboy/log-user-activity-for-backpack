@@ -2,14 +2,12 @@
 
 namespace Coziboy\LogUserActivityForBackpack\app\Http\Controllers;
 
-use App\Http\Requests\LogUserActivityRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Coziboy\LogUserActivityForBackpack\app\Models\Activity;
 
 /**
- * Class LogUserActivityCrudController
- * @package Coziboy\LogUserActivityForBackpack\app\Http\Controllers
+ * Class LogUserActivityCrudController.
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
 class LogUserActivityCrudController extends CrudController
@@ -25,7 +23,7 @@ class LogUserActivityCrudController extends CrudController
     public function setup()
     {
         CRUD::setModel(Activity::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/log-user');
+        CRUD::setRoute(config('backpack.base.route_prefix').'/log-user');
         CRUD::setEntityNameStrings('log-user', 'log-user-activities');
     }
 
@@ -61,38 +59,39 @@ class LogUserActivityCrudController extends CrudController
                 'class'     => function ($crud, $column, $entry, $related_key) {
                     switch ($entry->description) {
                         case 'created':
-                            $class = "badge badge-success";
+                            $class = 'badge badge-success';
                             break;
 
                         case 'updated':
-                            $class = "badge badge-warning text-white";
+                            $class = 'badge badge-warning text-white';
                             break;
 
                         case 'deleted':
-                            $class = "badge badge-danger text-white";
+                            $class = 'badge badge-danger text-white';
                             break;
 
                         default:
-                            $class = "badge badge-info";
+                            $class = 'badge badge-info';
                             break;
                     }
+
                     return $class;
-                }
-            ]
+                },
+            ],
         ]);
 
         $this->crud->addColumn([
             'name'      => 'subject',
             'label'     => 'Model',
             'type'      => 'model_function',
-            'function_name' => 'getTableName'
+            'function_name' => 'getTableName',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'causer',
             'label'     => 'User',
             'type'      => 'model_function',
-            'function_name' => 'getUser'
+            'function_name' => 'getUser',
         ]);
     }
 
@@ -124,38 +123,39 @@ class LogUserActivityCrudController extends CrudController
                 'class'     => function ($crud, $column, $entry, $related_key) {
                     switch ($entry->description) {
                         case 'created':
-                            $class = "badge badge-success";
+                            $class = 'badge badge-success';
                             break;
 
                         case 'updated':
-                            $class = "badge badge-warning text-white";
+                            $class = 'badge badge-warning text-white';
                             break;
 
                         case 'deleted':
-                            $class = "badge badge-danger text-white";
+                            $class = 'badge badge-danger text-white';
                             break;
 
                         default:
-                            $class = "badge badge-info";
+                            $class = 'badge badge-info';
                             break;
                     }
+
                     return $class;
-                }
-            ]
+                },
+            ],
         ]);
 
         $this->crud->addColumn([
             'name'      => 'subject',
             'label'     => 'Model',
             'type'      => 'model_function',
-            'function_name' => 'getTableName'
+            'function_name' => 'getTableName',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'causer',
             'label'     => 'User',
             'type'      => 'model_function',
-            'function_name' => 'getUser'
+            'function_name' => 'getUser',
         ]);
 
         $this->crud->addColumn([

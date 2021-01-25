@@ -13,7 +13,8 @@ class Activity extends ModelsActivity
     public function getDate()
     {
         $created = Carbon::parse($this->created_at);
-        return $created->format("Y-m-d H:i:s") . " (" . $created->diffForHumans() . ")";
+
+        return $created->format('Y-m-d H:i:s').' ('.$created->diffForHumans().')';
     }
 
     public function getTableName()
@@ -25,6 +26,7 @@ class Activity extends ModelsActivity
     {
         $name = $this->causer->name;
         $email = $this->causer->email;
-        return $name . "($email)";
+
+        return $name."($email)";
     }
 }

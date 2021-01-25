@@ -52,7 +52,7 @@ class LogUserActivityForBackpackServiceProvider extends ServiceProvider
     {
         // Publishing the views.
         $this->publishes([
-            __DIR__ . '/../resources/views/vendor/backpack' => base_path('resources/views/vendor/backpack'),
+            __DIR__.'/../resources/views/vendor/backpack' => base_path('resources/views/vendor/backpack'),
         ], 'views');
     }
 }

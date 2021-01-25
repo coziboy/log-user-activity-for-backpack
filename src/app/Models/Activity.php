@@ -16,29 +16,6 @@ class Activity extends ModelsActivity
         return $created->format("Y-m-d H:i:s") . " (" . $created->diffForHumans() . ")";
     }
 
-    public function getLogTypeClass()
-    {
-        $log_type = $this->description;
-        switch ($log_type) {
-            case 'created':
-                $class = "badge badge-success";
-                break;
-
-            case 'updated':
-                $class = "badge badge-warning text-white";
-                break;
-
-            case 'deleted':
-                $class = "badge badge-danger text-white";
-                break;
-
-            default:
-                $class = "badge badge-info";
-                break;
-        }
-        return $class;
-    }
-
     public function getTableName()
     {
         return $this->subject->getTable();

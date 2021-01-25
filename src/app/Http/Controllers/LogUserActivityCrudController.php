@@ -59,7 +59,7 @@ class LogUserActivityCrudController extends CrudController
             'wrapper'   => [
                 'element'   => 'span',
                 'class'     => function ($crud, $column, $entry, $related_key) {
-                    switch ($entry) {
+                    switch ($entry->description) {
                         case 'created':
                             $class = "badge badge-success";
                             break;
@@ -122,7 +122,7 @@ class LogUserActivityCrudController extends CrudController
             'wrapper'   => [
                 'element'   => 'span',
                 'class'     => function ($crud, $column, $entry, $related_key) {
-                    switch ($entry) {
+                    switch ($entry->description) {
                         case 'created':
                             $class = "badge badge-success";
                             break;

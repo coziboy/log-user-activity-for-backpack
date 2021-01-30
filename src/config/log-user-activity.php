@@ -1,8 +1,8 @@
 <?php
 
 return [
-    /**
+    /*
      * Models location
      */
-    'model' => 'App\\Models\\'
+    'model' => 'App\\Models\\',
 ];

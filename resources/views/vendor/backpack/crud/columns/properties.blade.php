@@ -35,13 +35,13 @@
     <tbody id="data">
         @php
         $attributes = $entry->changes["attributes"];
-        $old = $entry->changes["old"];
+        $old = $entry->changes["old"] ?? null;
         @endphp
         @foreach ($attributes as $key => $item)
         <tr>
             <th>{{ $key }}</th>
             <td id="data-item-new-{{ $key }}">{{ $attributes[$key] }}</td>
-            <td id="data-item-old-{{ $key }}">{{ $old[$key] }}</td>
+            <td id="data-item-old-{{ $key }}">{{ $old[$key] ?? null }}</td>
         </tr>
         @endforeach
     </tbody>

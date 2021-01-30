@@ -16,11 +16,11 @@ class LogUserActivityForBackpackServiceProvider extends ServiceProvider
     {
         // use the vendor configuration file as fallback
         $this->mergeConfigFrom(
-            __DIR__ . '/config/log-user-activity.php',
+            __DIR__.'/config/log-user-activity.php',
             'backpack.log-user-activity'
         );
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'log-user');
-        $this->loadRoutesFrom(__DIR__ . '/routes/backpack/loguseractivity.php');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'log-user');
+        $this->loadRoutesFrom(__DIR__.'/routes/backpack/loguseractivity.php');
         Paginator::defaultView('log-user::vendor.pagination.bootstrap-4');
         Paginator::defaultSimpleView('log-user::vendor.pagination.bootstrap-4');
 
@@ -57,12 +57,12 @@ class LogUserActivityForBackpackServiceProvider extends ServiceProvider
     {
         // Publishing the views.
         $this->publishes([
-            __DIR__ . '/../resources/views/vendor/backpack' => base_path('resources/views/vendor/backpack'),
+            __DIR__.'/../resources/views/vendor/backpack' => base_path('resources/views/vendor/backpack'),
         ], 'views');
 
         // Publish config file
         $this->publishes([
-            __DIR__ . '/config/log-user-activity.php' => config_path('backpack/log-user-activity.php')
+            __DIR__.'/config/log-user-activity.php' => config_path('backpack/log-user-activity.php'),
         ], 'config');
     }
 }

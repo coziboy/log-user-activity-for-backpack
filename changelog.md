@@ -2,6 +2,15 @@
 
 All notable changes to `Log User Activity For Backpack` will be documented in this file.
 
+## Version 1.0.4
+
+### Added
+- Configuration for models location
+
+### Fixed
+- Get table name when record deleted
+- Highlight change only for updated event
+
 ## Version 1.0.3
 
 ### Fixed

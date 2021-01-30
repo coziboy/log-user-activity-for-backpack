@@ -19,7 +19,7 @@ class Activity extends ModelsActivity
 
     public function getTableName()
     {
-        return $this->subject->getTable();
+        return str_replace(config('backpack.log-user-activity.model'), '', $this->subject_type);
     }
 
     public function getUser()

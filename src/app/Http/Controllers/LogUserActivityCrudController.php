@@ -35,24 +35,33 @@ class LogUserActivityCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        $this->crud->setTitle(__('Log User Activities'));
+        $this->crud->setHeading(__('Log User Activities'));
+
+        $this->data['breadcrumbs'] = [
+            trans('backpack::crud.admin') => backpack_url('dashboard'),
+            trans('Log User Activities') => backpack_url('log-user'),
+            trans('backpack::crud.list') => false,
+        ];
+
         $this->crud->set('show.setFromDb', false);
 
         $this->crud->addColumn([
             'name'  => 'id',
-            'label' => 'ID',
+            'label' => __('ID'),
             'type'  => 'number',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'created_at',
-            'label'     => 'Date',
+            'label'     => __('Date'),
             'type'      => 'model_function',
             'function_name' => 'getDate',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'description',
-            'label'     => 'Log Type',
+            'label'     => __('Log Type'),
             'type'      => 'text',
             'wrapper'   => [
                 'element'   => 'span',
@@ -82,14 +91,14 @@ class LogUserActivityCrudController extends CrudController
 
         $this->crud->addColumn([
             'name'      => 'subject',
-            'label'     => 'Model',
+            'label'     => __('Model'),
             'type'      => 'model_function',
             'function_name' => 'getTableName',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'causer',
-            'label'     => 'User',
+            'label'     => __('User'),
             'type'      => 'model_function',
             'function_name' => 'getUser',
         ]);
@@ -103,20 +112,20 @@ class LogUserActivityCrudController extends CrudController
 
         $this->crud->addColumn([
             'name'  => 'id',
-            'label' => 'ID',
+            'label' => __('ID'),
             'type'  => 'number',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'created_at',
-            'label'     => 'Date',
+            'label'     => __('Date'),
             'type'      => 'model_function',
             'function_name' => 'getDate',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'description',
-            'label'     => 'Log Type',
+            'label'     => __('Log Type'),
             'type'      => 'text',
             'wrapper'   => [
                 'element'   => 'span',
@@ -146,21 +155,21 @@ class LogUserActivityCrudController extends CrudController
 
         $this->crud->addColumn([
             'name'      => 'subject',
-            'label'     => 'Model',
+            'label'     => __('Model'),
             'type'      => 'model_function',
             'function_name' => 'getTableName',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'causer',
-            'label'     => 'User',
+            'label'     => __('User'),
             'type'      => 'model_function',
             'function_name' => 'getUser',
         ]);
 
         $this->crud->addColumn([
             'name'      => 'properties',
-            'label'     => 'Data',
+            'label'     => __('Data'),
             'type'      => 'properties',
         ]);
     }

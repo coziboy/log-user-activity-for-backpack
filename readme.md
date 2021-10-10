@@ -7,6 +7,8 @@
 
 A simple interface for [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog/) for [Laravel Backpack](https://github.com/Laravel-Backpack/CRUD).
 
+![https://user-images.githubusercontent.com/1032474/136689069-770c24e9-bb7d-4436-96ca-46462a11532e.png](https://user-images.githubusercontent.com/1032474/136689069-770c24e9-bb7d-4436-96ca-46462a11532e.png)
+
 ## Installation
 
 1) In your terminal

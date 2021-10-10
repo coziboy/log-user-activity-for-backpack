@@ -24,9 +24,9 @@ class Activity extends ModelsActivity
 
     public function getUser()
     {
-        $name = $this->causer->name;
-        $email = $this->causer->email;
+        $name = $this->causer->name ?? '';
+        $email = $this->causer->email ?? '';
 
-        return $name."($email)";
+        return $name . $email ? " ($email)" : "";
     }
 }

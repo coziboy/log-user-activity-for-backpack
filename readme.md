@@ -13,10 +13,10 @@ A simple interface for [spatie/laravel-activitylog](https://github.com/spatie/la
 
 ```bash
 # install the package with composer
-$ composer require coziboy/log-user-activity-for-backpack
+composer require coziboy/log-user-activity-for-backpack
 
 # Publish view
-$ php artisan vendor:publish --provider="Coziboy\LogUserActivityForBackpack\LogUserActivityForBackpackServiceProvider"
+php artisan vendor:publish --provider="Coziboy\LogUserActivityForBackpack\LogUserActivityForBackpackServiceProvider"
 
 # [optional] Add a sidebar_content item for it
 php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('log-user') }}'><i class='nav-icon la la-history'></i> Log User Activity</a></li>"
@@ -41,7 +41,7 @@ Please see the [changelog](changelog.md) for more information on what has change
 ## Testing
 
 ``` bash
-$ composer test
+composer test
 ```
 
 ## Contributing
